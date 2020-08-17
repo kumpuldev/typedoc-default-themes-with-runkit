@@ -42,6 +42,18 @@
 
 <div class="overlay"></div>
 <script src="{{relativeURL "assets/js/main.js"}}"></script>
+<script src="https://embed.runkit.com"></script>
+<script>
+  window.onload = function() {
+    document.querySelectorAll('code.language-ts').forEach(function(node) {
+      node = node.parentElement;
+      var text = node.innerText;
+      node.innerHTML = '';
+      text = "require('@kumpuldev/ects');\n\n" + text;
+      RunKit.createNotebook({element: node, source: text});
+    })
+  }
+</script>
 
 {{> analytics}}
 
