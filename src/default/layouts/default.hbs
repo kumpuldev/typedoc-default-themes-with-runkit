@@ -47,9 +47,10 @@
   window.onload = function() {
     document.querySelectorAll('code.language-ts').forEach(function(node) {
       node = node.parentElement;
+      node.style.padding = 'inherit';
       var text = node.innerText;
       node.innerHTML = '';
-      text = "require('@kumpuldev/ects');\n\n" + text;
+      text = "const {LinkedList} = require('@kumpuldev/ects');\n\n" + text;
       RunKit.createNotebook({element: node, source: text});
     })
   }
